@@ -1,0 +1,10 @@
+{
+    "id": "schale",
+    "name": "Schale",
+    "version": "0.1.0",
+    "minAppVersion": "0.15.0",
+    "description": "Format markdown document.",
+    "author": "Echo",
+    "authorUrl": "https://github.com/polyecho",
+    "isDesktopOnly": true
+}

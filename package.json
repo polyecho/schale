@@ -1,0 +1,38 @@
+{
+  "name": "schale",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Terminal-like experience on Obsidian",
+  "scripts": {
+    "dev": "nodemon --config \"./nodemon-configs/nodemon-dev.json\"",
+    "build": "rollup-c",
+    "lint": "eslint . --ext .ts --ignore-pattern '**/*.d.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polyecho/schale.git"
+  },
+  "author": "polyecho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polyecho/schale/issues"
+  },
+  "homepage": "https://github.com/polyecho/schale#readme",
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nodemon": "^3.0.1",
+    "obsidian": "latest",
+    "rollup": "^4.12.0",
+    "rollup-plugin-svg": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "src",
+        "wasm/pkg"
+    ],
+    "ext": "ts, js",
+    "ignore": [
+        "*.test.ts"
+    ],
+    "exec": "rollup -c"
+}

@@ -1,0 +1,22 @@
+{
+    "include": ["src/**/*"],
+    "files": ["src/global.d.ts"],
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "target": "ES6",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "noUncheckedIndexedAccess": true,
+        "moduleResolution": "node10",
+        "module": "ESNext",
+        "lib": ["ES2022", "DOM"],
+        "baseUrl": "./",
+        "paths": {
+            "@events/*": ["./src/events/*"],
+            "@settings/*": ["./src/settings/*"]
+        }
+    }
+}

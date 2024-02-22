@@ -1,7 +1,7 @@
 export interface SchalePluginSettings {
-    exampleOption: Partial<number>;
+    exampleOption: Partial<string>;
 }
 
 export const DEFAULT_SETTINGS: SchalePluginSettings = {
-    exampleOption: 0,
+    exampleOption: "0",
 };

@@ -1,8 +1,11 @@
 {
     "include": ["src/**/*"],
+    "extends": "@tsconfig/svelte/tsconfig.json",
     "files": ["src/global.d.ts"],
     "compilerOptions": {
+        "types": ["svelte", "node"],
         "esModuleInterop": true,
+        "strictPropertyInitialization": false,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
         "target": "ES6",
@@ -15,8 +18,8 @@
         "lib": ["ES2022", "DOM"],
         "baseUrl": "./",
         "paths": {
-            "@events/*": ["./src/events/*"],
-            "@settings/*": ["./src/settings/*"]
+            "@src/*": ["src/*"],
+            "@components/*": ["src/components/*"]
         }
     }
 }

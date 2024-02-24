@@ -1,13 +1,14 @@
 import { Plugin } from "obsidian";
-import { SchaleSettingTab } from "src/components/settings/settingTab";
-import { DEFAULT_SETTINGS } from "src/components/settings/settingTypes";
 
-import { SchaleCommands } from "./components/commands";
-import { CustomIcons } from "./components/icons/icons";
-import { SchaleUtils } from "./components/utils";
-import { SchaleViews } from "./components/views/views";
+import { SchaleSettingTab } from "@src/obsidian/settings/settingTab";
+import { DEFAULT_SETTINGS } from "@src/obsidian/settings/settingTypes";
 
-import type { SchalePluginSettings } from "src/components/settings/settingTypes";
+import { SchaleCommands } from "./obsidian/commands";
+import { CustomIcons } from "./obsidian/icons/icons";
+import { SchaleUtils } from "./obsidian/utils";
+import { SchaleViews } from "./obsidian/views/views";
+
+import type { SchalePluginSettings } from "@src/obsidian/settings/settingTypes";
 
 /** Entry Point. */
 export default class SchalePlugin extends Plugin {

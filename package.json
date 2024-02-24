@@ -5,7 +5,7 @@
   "description": "Terminal-like experience on Obsidian",
   "scripts": {
     "dev": "nodemon --config \"./nodemon-configs/nodemon-dev.json\"",
-    "build": "rollup-c",
+    "build": "rollup -c",
     "lint": "eslint . --ext .ts --ignore-pattern '**/*.d.ts'"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "rollup": "^4.12.0",
     "rollup-plugin-svelte": "^7.1.6",
     "rollup-plugin-svg": "^2.0.0",
+    "sass": "^1.71.1",
     "svelte": "^4.2.11",
     "svelte-preprocess": "^5.1.3",
     "typescript": "^5.3.3"

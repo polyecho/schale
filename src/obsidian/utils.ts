@@ -1,4 +1,4 @@
-import SchalePlugin from "../main";
+import SchalePlugin from "@src/main";
 
 export class SchaleUtils {
     private plugin: SchalePlugin;

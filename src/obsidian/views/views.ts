@@ -1,5 +1,5 @@
 import type { WorkspaceLeaf } from "obsidian";
-import type SchalePlugin from "src/main";
+import type SchalePlugin from "@src/main";
 import { SchaleShellView } from "./shell/shell";
 
 export class SchaleViews {

@@ -1,5 +1,5 @@
 import type { Command } from "obsidian";
-import type SchalePlugin from "src/main";
+import type SchalePlugin from "@src/main";
 
 export class SchaleCommands {
     private plugin: SchalePlugin;

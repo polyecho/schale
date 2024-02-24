@@ -11,3 +11,11 @@
 <div class="number">
     <span>{plugin.manifest.author} / {variable}</span>
 </div>
+
+<style lang="scss">
+    .number {
+        span {
+            color: cornflowerblue;
+        }
+    }
+</style>

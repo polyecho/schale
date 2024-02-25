@@ -1,7 +1,7 @@
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
-import store from "../store";
-import Component from "./Component.svelte";
+import Shell from "./Shell.svelte";
+import { pluginStore } from "./store";
 
 import type SchalePlugin from "@src/main";
 
@@ -12,7 +12,7 @@ import type SchalePlugin from "@src/main";
 export const VIEW_TYPE = "shell-view";
 
 export class SchaleShellView extends ItemView {
-    component: Component;
+    component: Shell;
 
     private plugin: SchalePlugin;
 
@@ -30,12 +30,12 @@ export class SchaleShellView extends ItemView {
     }
 
     async onOpen() {
-        store.plugin.set(this.plugin);
+        pluginStore.set(this.plugin);
 
-        this.component = new Component({
+        this.component = new Shell({
             target: this.contentEl,
             props: {
-                variable: 1,
+                // todo
             },
         });
     }

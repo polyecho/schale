@@ -3,7 +3,7 @@
         "src",
         "wasm/pkg"
     ],
-    "ext": "ts, js",
+    "ext": "ts, js, svelte",
     "ignore": [
         "*.test.ts"
     ],

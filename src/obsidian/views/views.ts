@@ -11,7 +11,7 @@ export class SchaleViews {
 
     registerViews() {
         this.plugin.registerView(
-            "schale-shell",
+            "schale-shell-view",
             (leaf: WorkspaceLeaf) => new SchaleShellView(leaf, this.plugin)
         );
     }

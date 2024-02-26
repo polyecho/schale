@@ -21,13 +21,15 @@ export class SchaleCommands {
                 name: "Open Schale View",
                 icon: "schale-logo",
                 callback: async () => {
-                    this.plugin.app.workspace.detachLeavesOfType(
-                        "schale-shell"
+                    await this.plugin.app.workspace.detachLeavesOfType(
+                        "schale-shell-view"
                     );
 
-                    const leaf = this.plugin.app.workspace.getLeaf();
-                    await leaf.setViewState({ type: "schale-shell" });
-                    this.plugin.app.workspace.revealLeaf(leaf);
+                    const leaf = this.plugin.app.workspace.getLeaf("tab");
+                    await leaf.setViewState({
+                        type: "schale-shell-view",
+                        active: true,
+                    });
                 },
             },
         ];

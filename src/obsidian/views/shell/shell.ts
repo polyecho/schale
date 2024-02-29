@@ -14,29 +14,25 @@ export const VIEW_TYPE = "schale-shell-view";
 export const DISPLAY_TEXT = "Schale Shell";
 
 export class SchaleShellView extends ItemView {
-    component: Shell;
-
+    private component: Shell;
     private plugin: SchalePlugin;
+
+    constructor(leaf: WorkspaceLeaf, plugin: SchalePlugin) {
+        super(leaf);
+        this.plugin = plugin;
+    }
 
     async onOpen() {
         pluginStore.set(this.plugin);
 
         this.component = new Shell({
             target: this.contentEl,
-            props: {
-                // todo
-            },
         });
     }
 
     async onClose() {
         shellStore.update(() => []);
         this.component.$destroy();
-    }
-
-    constructor(leaf: WorkspaceLeaf, plugin: SchalePlugin) {
-        super(leaf);
-        this.plugin = plugin;
     }
 
     getViewType() {

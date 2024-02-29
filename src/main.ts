@@ -5,7 +5,6 @@ import { DEFAULT_SETTINGS } from "@src/obsidian/settings/settingTypes";
 
 import { SchaleCommands } from "./obsidian/commands";
 import { CustomIcons } from "./obsidian/icons/icons";
-import { SchaleUtils } from "./obsidian/utils";
 import { SchaleViews } from "./obsidian/views/views";
 
 import type { SchalePluginSettings } from "@src/obsidian/settings/settingTypes";
@@ -13,13 +12,12 @@ import type { SchalePluginSettings } from "@src/obsidian/settings/settingTypes";
 /** Entry Point. */
 export default class SchalePlugin extends Plugin {
     settings: SchalePluginSettings;
-    utils = new SchaleUtils(this);
 
     private iconCreator = new CustomIcons();
     private commandCreator = new SchaleCommands(this);
     private viewCreator = new SchaleViews(this);
 
-    /** Load and Save Settings */
+    /** Loads Settings */
     async loadSettings() {
         this.settings = Object.assign(
             {},
@@ -27,6 +25,8 @@ export default class SchalePlugin extends Plugin {
             await this.loadData()
         );
     }
+
+    /** Saves Settings */
     async saveSettings() {
         await this.saveData(this.settings);
     }

@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import InputForm from "./InputForm.svelte";
-
-    import type SchalePlugin from "@src/main";
+    import { onMount } from "svelte";
     import { pluginStore, shellStore } from "./store";
+    import type SchalePlugin from "@src/main";
 
     /*
     In Svelte, if you modify an array or an object,

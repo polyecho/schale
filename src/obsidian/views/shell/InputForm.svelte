@@ -1,22 +1,25 @@
 <script lang="ts">
+    import { getUsername } from "./utils";
     import { shellStore, pluginStore } from "./store";
+    import { onMount } from "svelte";
 
-    let computerUsername = "temp";
     let shellInput = "";
 
-    let userInfo = "";
-    pluginStore.subscribe(
-        (p) => (userInfo = `${p.app.vault.getName()}@${computerUsername} $`)
-    );
+    let computerUsername: string | null = null;
+    onMount(async () => {
+        computerUsername = await getUsername();
+    });
+
+    $: shellInfo = computerUsername
+        ? `${$pluginStore.app.vault.getName()}@${computerUsername}`
+        : `${$pluginStore.app.vault.getName()}`;
 </script>
 
 <div class="input-wrapper">
-    <span class="userinfo"
-        >{$pluginStore.app.vault.getName()}@{computerUsername} $</span
-    >
+    <span class="user-info">{shellInfo} $</span>
     <form
-        on:submit|preventDefault={(e) => {
-            shellStore.update((s) => [...s, `${userInfo} ${shellInput}`]);
+        on:submit|preventDefault={() => {
+            shellStore.update((s) => [...s, `${shellInfo} $ ${shellInput}`]);
             shellInput = "";
         }}
     >
@@ -29,17 +32,17 @@
         display: flex;
         flex-direction: row;
 
-        .userinfo {
+        .user-info {
             white-space: nowrap;
             margin-right: 3px;
         }
 
         input {
+            font: inherit;
             width: 100%;
             border: none;
             outline: none;
             background: none;
-            font: inherit;
         }
     }
 </style>
